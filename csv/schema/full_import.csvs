@@ -15,7 +15,7 @@ first_name: length(*, 255) @optional
 last_name: length(*, 255) @optional
 // The dates must all be in ISO 8601 format (date part only), i.e., YYYY-MM-DD.
 // Activation date: when to activate the user's access
-activation_date: xDate
+activation_date: xDate @optional
 // Termination date: when to terminate the users's access, optional.
 termination_date: xDate @optional
 // Country code: user's country, 2 letter country code, uppercase, optional.
@@ -29,8 +29,8 @@ group: length(*, 255) @optional
 // Gender: can be "male", "female" or "other", optional.
 gender: is("male") or is("female") or is("other") @ignoreCase @optional
 // Phone, mobile and work: user's mobile and work phone number, both optional.
-phones_mobile: regex("^[0-9 +()-]+$") and length(*, 255) @optional
-phones_work: regex("^[0-9 +()-]+$") and length(*, 255) @optional
+phone_mobile: regex("^[0-9 +()-]+$") and length(*, 255) @optional
+phone_work: regex("^[0-9 +()-]+$") and length(*, 255) @optional
 // Birthday: user's date of birth, optional.
 birthday: xDate @optional
 // Work start date: when the employee started working for the company, optional.
